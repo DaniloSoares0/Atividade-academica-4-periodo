@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" comment="" id="pf15412915443460" configfile="/ControleSemaforo/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="122" y="178" id="pf15424115315173" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf15424115315174" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="paginas/cadastro.xhtml" x="338" y="178" id="pf15424115315175" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf15424115315174" path="/paginas/menu.xhtml"/>
+  <links id="pf15424115315174" target="pf15424115315175" source="pf15424115315173" outcome="Sucesso" fromaction="#{userLoginView.login}"/>
+</pageflow:Pageflow>

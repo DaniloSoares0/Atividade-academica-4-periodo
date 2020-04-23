@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"      
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	<h:head>
+		<style type="text/css">
+			body {
+				font-size:12px;
+			}
+			
+			.impedimento {
+				background: #66CDAA;
+			}
+			
+			.restricao{
+				background:#6495ED;
+			}
+			
+			.buttons {
+				position: relative;
+				margin: 3px;
+				padding-left: 5px;
+				padding-bottom: 5px;
+				text-align: right;
+			}
+			
+			.ui-menu {
+				width: auto;
+			}
+			
+			.ui-panelgrid .ui-panelgrid-cell {border:none;border-style:none}
+			.pesquisaSup {border:none; border-style:none}
+			.pesquisaSup tr {border:none;border-style:none}
+			.pesquisaSup td {border:none;border-style:none}
+			.ui-corner-all {border:none;border-style:none}
+			.pesquisaGrid {background-color:#000;}
+			.ui-widget-content {border:none;border-style:none}
+		</style>
+	<title>
+			<ui:insert name="title">Controle de Semaforo</ui:insert>
+		
+		</title>
+</h:head>
+
+	<h:body>
+		 <p:tabMenu activeIndex="#{param.i}">
+		    <p:menuitem value="Cadastro" outcome="/paginas/cadastro.xhtml" icon="pi pi-user">
+		        <f:param name="i" value="3" />
+		    </p:menuitem>
+		    <p:menuitem value="Busca" outcome="/paginas/lista.xhtml" icon="pi pi-user">
+		        <f:param name="i" value="1" />
+		    </p:menuitem>
+		    <p:menuitem value="Sair" outcome="/index.xhtml" icon="pi pi-user">
+		        <f:param name="i" value="2" />
+		    </p:menuitem>
+        </p:tabMenu>
+			   
+	</h:body>
+</html>
+	  
+	  
+	  
+	  
+	  
+

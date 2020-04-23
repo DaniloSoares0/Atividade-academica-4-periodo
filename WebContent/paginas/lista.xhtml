@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"      
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	<h:head>
+		
+	<style type="text/css">
+	
+		   
+			
+			
+            .value {
+                font-weight: bold;
+            }
+
+			
+		</style>
+
+ 
+
+	    <title>
+			<ui:insert name="title">Controle de Semaforo</ui:insert>
+		</title>
+		
+		 <ui:include src="/paginas/menu.xhtml" />
+      
+</h:head>
+<h:body>
+	<h:form id="form">
+    <p:dataGrid var="semaforo" value="#{semaforoMB.listaSemaforo}" columns="3" layout="grid"
+        rows="6" paginator="true" id="listaSemaforo"
+        paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+        rowsPerPageTemplate="6,12,16">
+         
+        <f:facet name="header">
+            Lista de Semaforos
+        </f:facet>
+ 
+        <p:panel header="#{semaforo.codigo}" style="text-align:center">
+            <h:panelGrid columns="1" style="width:100%">
+                <p:graphicImage url="/img/login.png"/> 
+ 
+                <h:outputText value="#{semaforo.status}" />
+ 
+                <p:commandButton update=":form:carDetail" oncomplete="PF('carDialog').show()" title="Localizacao">
+                    <h:outputText styleClass="pi pi-search" style="margin:0 auto;"/>
+          
+                </p:commandButton>
+            </h:panelGrid>
+        </p:panel>
+        <p:commandButton update="form" value=" Excluir "  actionListener="#{semaforoMB.excluir}" >
+	    <f:param  value="#{semaforo.id}"  />
+	    </p:commandButton>
+	    
+ 	
+    </p:dataGrid>
+ 
+ 
+    <p:commandButton value="  Refresh " ajax ="false"   actionListener="#{semaforoMB.init}"  />
+ 
+    <p:dialog header="Informações" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+        <p:outputPanel id="carDetail" style="text-align:center;">
+        
+            <p:dataGrid  var="localizacao" columns="2" value="#{semaforoMB.listaLocalizacao}" columnClasses="label,value">
+                
+                 
+         
+                <h:outputText value="Numero" />
+                <h:outputText value="#{localizacao.numero}" />
+               
+                <h:outputText value="Rua" />
+                <h:outputText value="#{localizacao.rua}" />
+ 
+                <h:outputText value="Bairro" />
+                <h:outputText value="#{localizacao.bairro}" />
+                
+                <h:outputText value="Cidade" />
+                <h:outputText value="#{localizacao.cidade}" />
+                
+                <h:outputText value="Estado" />
+                <h:outputText value="#{localizacao.estado}" />
+                
+                <h:outputText value="CEP" />
+                <h:outputText value="#{localizacao.CEP}" />
+                
+             
+            </p:dataGrid>
+        </p:outputPanel>
+    </p:dialog>
+</h:form>
+	</h:body>
+</html>
+	  
+	  
+	  
+	  
+	  
+

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"      
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	<h:head>
+		<style type="text/css">
+			body {
+				font-size:12px;
+			}
+			
+			.impedimento {
+				background: #66CDAA;
+			}
+			
+			.restricao{
+				background:#6495ED;
+			}
+			
+			.buttons {
+				position: relative;
+				margin: 3px;
+				padding-left: 5px;
+				padding-bottom: 5px;
+				text-align: right;
+			}
+			
+			.ui-menu {
+				width: auto;
+			}
+			
+			.ui-panelgrid .ui-panelgrid-cell {border:none;border-style:none}
+			.pesquisaSup {border:none; border-style:none}
+			.pesquisaSup tr {border:none;border-style:none}
+			.pesquisaSup td {border:none;border-style:none}
+			.ui-corner-all {border:none;border-style:none}
+			.pesquisaGrid {background-color:#000;}
+			.ui-widget-content {border:none;border-style:none}
+		</style>
+
+
+	<title>
+			<ui:insert name="title">Controle de Semaforo</ui:insert>
+		</title>
+</h:head>
+
+	<h:body>
+      <ui:include src="/paginas/menu.xhtml" />
+      
+      
+		<h:form  header="Cadastro de Semaforo">
+			<p:panelGrid columns="2"  layout="grid"  >
+				<p:column>
+					<p:outputLabel for="Codigo" value="Codigo :" />
+					<p:inputText id="Codigo" value="#{semaforoMB.semaforo.codigo}" size="30" maxlength="30"></p:inputText>
+				</p:column>
+				
+			    <p:column>
+				    <p:outputLabel for="Status" value="Status : " /> 
+			        <p:inputText id="Status" update="growl"  value="#{semaforoMB.semaforo.status}"  size="20" maxlength="30"></p:inputText>
+			   </p:column>	
+			   
+			   <p:column>
+			        <p:outputLabel for="numero" value="Numero : " /> 
+			        <p:inputText id="numero" update="growl"  value="#{semaforoMB.localizacao.numero}"  size="20" maxlength="30"></p:inputText>
+			   </p:column>	
+		
+		       <p:column>
+			        <p:outputLabel for="rua" value="Rua : " /> 
+			        <p:inputText id="rua" update="growl"  value="#{semaforoMB.localizacao.rua}"  size="20" maxlength="30"></p:inputText>
+			   </p:column>	
+		
+		       <p:column>
+			        <p:outputLabel for="bairro" value="Bairro : " /> 
+			        <p:inputText id="bairro" update="growl"  value="#{semaforoMB.localizacao.bairro}"  size="20" maxlength="30"></p:inputText>
+			   </p:column>	
+		
+		       <p:column>
+			        <p:outputLabel for="Cidade" value="Cidade : " /> 
+			        <p:inputText id="Cidade" update="growl"  value="#{semaforoMB.localizacao.cidade}"  size="20" maxlength="30"></p:inputText>
+			   </p:column>	
+			   
+	        	<p:column>
+			        <p:outputLabel for="Estado" value="Estado : " /> 
+			        <p:inputText id="Estado" update="growl"  value="#{semaforoMB.localizacao.estado}"  size="20" maxlength="30"></p:inputText>
+			   </p:column>	
+		
+	           <p:column>
+			        <p:outputLabel for="CEP" value="CEP : " /> 
+			        <p:inputText id="CEP" update="growl"  value="#{semaforoMB.localizacao.CEP}"  size="20" maxlength="30"></p:inputText>
+			   </p:column>	
+			  
+			   
+			</p:panelGrid>
+			<p align="right">
+		    
+  		<p:commandButton value="  Gravar " ajax ="false"   actionListener="#{semaforoMB.gravar}"  />
+ 		
+ 		</p>
+		
+		</h:form>
+			
+	
+		    
+   						
+ 				
+		 
+	</h:body>
+</html>
+	  
+	  
+	  
+	  
+	  
+
